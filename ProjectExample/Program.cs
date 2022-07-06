@@ -5,17 +5,35 @@ namespace ProjectExample
     class Program
     {
         static void Main(string[] args)
-            
+
         {
-            Console.Write("Enter kilometer value:");
-            int kilometers = Convert.ToInt32(Console.ReadLine());
+            int Min = 0;
+            int Max = 20;
 
-            int meters = kilometers * 1000;
+            int[] array = new int[5];
 
-            Console.Write("Meters amount:"+ meters);
-                  
-                   
-                       
+            Random randNum = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = randNum.Next(Min, Max);
+                Console.Write($"[{array[i]}] ");
+            }
+
+            MinimalElement(array);
+        }
+
+        //1. Find the minimum element of an array
+        static void MinimalElement(int[] array)
+        {
+            int arrayMin = 100;
+            for (int i = 0; i < array.Length; i++)
+            {
+                int arrayCurrent = array[i];
+                if (arrayCurrent < arrayMin) {
+                    arrayMin = arrayCurrent;
+                }
+            }
+            Console.WriteLine(arrayMin);
         }
     }
 }
