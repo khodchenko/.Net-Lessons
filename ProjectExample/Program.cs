@@ -10,7 +10,7 @@ namespace ProjectExample
             int Min = 0;
             int Max = 20;
 
-            int[] array = new int[10];
+            int[] array = new int[5];
 
             Random randNum = new Random();
             for (int i = 0; i < array.Length; i++)
@@ -19,7 +19,8 @@ namespace ProjectExample
                 Console.Write($"[{array[i]}] ");
             }
 
-            getMaximalElementIndex(array);
+            Console.WriteLine();
+            getSumElementsByOddIndices(array);
         }
 
         //1. Find the minimum element of an array
@@ -86,6 +87,19 @@ namespace ProjectExample
         }
 
         //5. Calculate the sum of array elements with odd indices
+        static void getSumElementsByOddIndices(int[] array)
+        {
+            int counter = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i % 2 != 0) 
+                {
+                    counter += array[i];   
+                } 
+            }
+            Console.WriteLine(counter);
+        }
+
         //6. Make an array reverse(an array in the opposite direction)
         //7. Count the number of odd array elements
         //8. Swap the first and second half of the array, for example, for an array of 1 2 3 4, the result is 3 4 1 2, or for 1 2 3 4 5 -> 4 5 3 1 2.
