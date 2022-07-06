@@ -19,13 +19,13 @@ namespace ProjectExample
                 Console.Write($"[{array[i]}] ");
             }
 
-            MinimalElement(array);
+            MaximumElement(array);
         }
 
         //1. Find the minimum element of an array
         static void MinimalElement(int[] array)
         {
-            int arrayMin = 100;
+            int arrayMin = 99; //it depends on the maximum possible element
             for (int i = 0; i < array.Length; i++)
             {
                 int arrayCurrent = array[i];
@@ -34,6 +34,21 @@ namespace ProjectExample
                 }
             }
             Console.WriteLine(arrayMin);
+        }
+
+        //2. Find the maximum element of an array
+        static void MaximumElement(int[] array)
+        {
+            int arrayMax = -99; //same
+            for (int i = 0; i < array.Length; i++)
+            {
+                int arrayCurrent = array[i];
+                if (arrayCurrent > arrayMax)
+                {
+                    arrayMax = arrayCurrent;
+                }
+            }
+            Console.WriteLine(arrayMax);
         }
     }
 }
