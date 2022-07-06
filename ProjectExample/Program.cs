@@ -20,7 +20,7 @@ namespace ProjectExample
             }
 
             Console.WriteLine();
-            getSumElementsByOddIndices(array);
+            getSumElementsByOddElements(array);
         }
 
         //1. Find the minimum element of an array
@@ -101,7 +101,23 @@ namespace ProjectExample
         }
 
         //6. Make an array reverse(an array in the opposite direction)
+        //Solution: Array.Reverse();
+        //https://docs.microsoft.com/en-us/dotnet/api/system.array.reverse
+
         //7. Count the number of odd array elements
+        static void getSumElementsByOddElements(int[] array)
+        {
+            int counter = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 != 0)
+                {
+                    counter += array[i];
+                }
+            }
+            Console.WriteLine(counter);
+        }
+
         //8. Swap the first and second half of the array, for example, for an array of 1 2 3 4, the result is 3 4 1 2, or for 1 2 3 4 5 -> 4 5 3 1 2.
         //9. Sort the array in ascending order in one of the ways: bubble(Bubble), selection(Select) or inserts(Insert))
         //10. Sort the array in descending order in one of the ways(different from the method in the 9th task): bubble(Bubble), selection(Select) or inserts(Insert))
