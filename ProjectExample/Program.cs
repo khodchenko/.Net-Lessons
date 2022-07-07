@@ -18,21 +18,17 @@ namespace ProjectExample
                 array[i] = randNum.Next(Min, Max);
                 Console.Write($"[{array[i]}] ");
             }
-
-            Console.WriteLine();
-            swapHalfOfArray(array);
         }
 
         //1. Find the minimum element of an array
         static void getMinimalElement(int[] array)
         {
-            int arrayMin = 99;
+            int arrayMin = array[0];
             for (int i = 0; i < array.Length; i++)
             {
-                int arrayCurrent = array[i];
-                if (arrayCurrent < arrayMin)
+                if (array[i] < arrayMin)
                 {
-                    arrayMin = arrayCurrent;
+                    arrayMin = array[i];
                 }
             }
             Console.WriteLine(arrayMin);
@@ -41,13 +37,12 @@ namespace ProjectExample
         //2. Find the maximum element of an array
         static void getMaximumElement(int[] array)
         {
-            int arrayMax = -99;
+            int arrayMax = array[0];
             for (int i = 0; i < array.Length; i++)
             {
-                int arrayCurrent = array[i];
-                if (arrayCurrent > arrayMax)
+                if (array[i] > arrayMax)
                 {
-                    arrayMax = arrayCurrent;
+                    arrayMax = array[i];
                 }
             }
             Console.WriteLine(arrayMax);
@@ -120,7 +115,7 @@ namespace ProjectExample
         }
 
         //8. Swap the first and second half of the array, for example, for an array of 1 2 3 4, the result is 3 4 1 2, or for 1 2 3 4 5 -> 4 5 3 1 2.
-        static void swapHalfOfArray(int[] array)
+        static void swapHalfArray(int[] array)
         {
             int half = array.Length / 2;
             int offset = array.Length - half;
@@ -129,11 +124,22 @@ namespace ProjectExample
                 int temp = array[i];
                 array[i] = array[offset + i];
                 array[offset + i] = temp;
-
             }
+        }
 
             //9. Sort the array in ascending order in one of the ways: bubble(Bubble), selection(Select) or inserts(Insert))
-            //10. Sort the array in descending order in one of the ways(different from the method in the 9th task): bubble(Bubble), selection(Select) or inserts(Insert))
+        static int[] sortArrrayInAscendingOrder(int[] array)
+            {
+                Array.Sort(array);
+                return array;
+            }
+
+        //10. Sort the array in descending order in one of the ways(different from the method in the 9th task): bubble(Bubble), selection(Select) or inserts(Insert))
+        static int[] sortArrrayInDescendingOrder(int[] array)
+        {
+            Array.Sort(array);
+            Array.Reverse(array);
+            return array;
         }
     }
 }
